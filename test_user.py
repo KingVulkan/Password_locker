@@ -17,3 +17,11 @@ class TestUser(unittest.TestCase):
         '''
         self.new_user = User("Instagram", "Suwa", "12345") # create user object
 
+    def test_init(self):
+        '''
+        test_init test case to test if the object is initialized properly
+        '''
+
+        self.assertEqual(self.new_user.account,"Instagram")
+        self.assertEqual(self.new_user.username,"Mano")
+        self.assertEqual(self.new_user.password,"12345")
