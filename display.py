@@ -16,3 +16,5 @@ def save_user(user):
     user.save_user()    
 def find_user(account):
     return User.find_by_account(account)    
+def check_existing_user(account):
+    return User.user_exist(account)    
