@@ -25,3 +25,13 @@ class TestUser(unittest.TestCase):
         self.assertEqual(self.new_user.account,"Instagram")
         self.assertEqual(self.new_user.username,"Mano")
         self.assertEqual(self.new_user.password,"12345")
+    def test_save_multiple_user(self):
+            '''
+            test_save_multiple_contact to check if we can save multiple user
+            objects to our contact_list ueegfu
+            '''
+            self.new_user.save_user()
+            test_user = User("Instagram", "Mano", "12345") # new user
+            test_user.save_user()
+            # test_user.save_contact()
+            self.assertEqual(len(User.user_list),2)     
