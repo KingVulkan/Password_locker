@@ -62,4 +62,15 @@ class TestUser(unittest.TestCase):
 
         found_user = User.find_by_account("Instagram")
 
-        self.assertEqual(found_user.username, test_user.username)    
+        self.assertEqual(found_user.username, test_user.username) 
+
+    def test_user_exists(self):
+        self.new_user.save_user()
+        test_user = User("Instagram", "Mano", "12345")
+        test_user.save_user()
+
+        user_exists = User.user_exist("Instagram")
+
+        self.assertTrue(user_exists)
+    def test_display_all_users(self):
+        self.assertEqual(User.display_users(), User.user_list)       
