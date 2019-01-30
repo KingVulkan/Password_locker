@@ -45,3 +45,21 @@ class TestUser(unittest.TestCase):
     def test_save_user(self):
         self.new_user.save_user()
         self.assertEqual(len(User.user_list),1)  
+
+    def test_delete_user(self):
+        self.new_user.save_user()
+        test_user = User("Instagram", "Mano", "12345")
+        test_user.save_user()
+
+        self.new_user.delete_user()
+        self.assertEqual(len(User.user_list), 1)
+        #---------------------------------------------------------------------------------
+    def test_find_user_by_account(self):
+
+        self.new_user.save_user()
+        test_user = User("Instagram", "Mano", "12345")
+        test_user.save_user()
+
+        found_user = User.find_by_account("Instagram")
+
+        self.assertEqual(found_user.username, test_user.username)    
