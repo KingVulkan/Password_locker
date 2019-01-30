@@ -54,3 +54,18 @@ def main():
             print("\033[1;31;1m You have successfully saved your Credentials \n")
             # print(emoji.emojize('Python is :thumbs_up_sign:'))
             print("\033[1;32;1m  \n")
+        elif short_code == "dc":
+            if display_users():
+                print("Here is a list of all your Accounts")
+                print("\n")
+                # for user in display_users():
+                user = User.display_user()
+                print("\033[1;37;1m  \n")
+                print(f"Site: {user.account} \n User Name: {user.username} \n Password: {user.password}")
+                    # print(user)
+            else:
+                print("\033[1;32;1m  \n")
+                print(" ")
+                print("You don't seem to have any accounts created yet")
+if __name__ == '__main__':
+	main()        
