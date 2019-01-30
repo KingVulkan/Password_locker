@@ -14,3 +14,5 @@ def save_user(user):
     Function to save user
     '''
     user.save_user()    
+def find_user(account):
+    return User.find_by_account(account)    
